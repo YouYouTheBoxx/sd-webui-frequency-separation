@@ -1,4 +1,4 @@
-# 🌊 Frequency Separation Extension for WebUI
+# 🌊 Frequency Separation Extension for ComfyUI
 *Unlock extra-sharp Stable Diffusion renders by processing low, mid & high frequencies separately*
 
 ![Frequency Separation Comparison](preview/comp.png)
@@ -26,15 +26,14 @@ The end result is visibly crisper and contrasty. Generated PNGs are usually **80
 * Each band is inverse-FFT’d, diffused with custom steps/CFG, then re-FFT’d and merged.
 ---
 
-## 2. Installation  
-**Plain-English steps**  
-1. `git clone` this repo in your WebUI `extensions/` or in **Extensions** tab "Install from URL": `https://github.com/thavocado/sd-webui-frequency-separation`
-2. Restart the WebUI—look for the **“Frequency Separation”** accordion in *txt2img* & *img2img*.
+## 2. Installation
+Clone this repository into your ComfyUI `custom_nodes` directory:
 
-**Tested Compatibility**
-- **Forge**: f2.0.1v1.10.1-previous-665-gae278f79
-- **AUTOMATIC1111**: v1.9.4
-- **reForge**: f1.7.0-v1.10.1RC-latest-2255-g2b54f24a
+```bash
+git clone https://github.com/thavocado/sd-webui-frequency-separation
+```
+
+After restarting ComfyUI you will find **Frequency Split** and **Frequency Recombine** nodes in the *frequency* category.
 
 ## 3. Internal Pipeline
 
@@ -106,5 +105,5 @@ Control each frequency band's processing independently for fine-tuned results.
 ## 7. Caveats
 
 * Increases generation time by 3x. I recommend using it after you establish a base gen.
-* No ComfyUI nodes (yet).
+* Custom nodes for ComfyUI are provided in this repository.
 * Currently test on reForge only. Will work with other flavours of WebUI, but if you run into problems please let me know via https://github.com/thavocado/sd-webui-frequency-separation/issues.
